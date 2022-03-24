@@ -30,7 +30,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("admin")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "https://soft-smakager-1eae1d.netlify.app", allowedHeaders = "*")
 public class AdminController{
 
 	private AdminServiceImpl adminService;
