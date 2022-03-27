@@ -13,7 +13,7 @@ import com.elad.CouponSystemV3Spring.utills.DateUtills;
 
 import lombok.RequiredArgsConstructor;
 
-@Component
+//@Component
 @Order(2)
 @RequiredArgsConstructor
 public class CompanyServiceTesting implements CommandLineRunner{
