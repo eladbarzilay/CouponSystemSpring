@@ -50,13 +50,13 @@ public class AdminServiceTesting implements CommandLineRunner{
 		adminService.addCompany(c2);
 		adminService.addCompany(c3);
 		adminService.addCompany(c4);
-		System.out.println("_____ add company dont work _______");
-		try {
-			adminService.addCompany(c1);
-			
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+//		System.out.println("_____ add company dont work _______");
+//		try {
+//			adminService.addCompany(c1);
+//			
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
 		System.out.println("_____ get all companies _______");
 		System.out.println(adminService.getAllCompanies());
 		Company c5 = adminService.getOneCompany(1);
@@ -67,15 +67,15 @@ public class AdminServiceTesting implements CommandLineRunner{
 		adminService.updateCompany(c5);
 		System.out.println("after update");
 		System.out.println(adminService.getOneCompany(1));
-		System.out.println("_____ update company dont work_______");
-		c5.setId(15);
-		c5.setName("elel");
-		try {
-			adminService.updateCompany(c5);
-			
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+//		System.out.println("_____ update company dont work_______");
+//		c5.setId(15);
+//		c5.setName("elel");
+//		try {
+//			adminService.updateCompany(c5);
+//			
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
 		System.out.println("____ get one company ______");
 		System.out.println(adminService.getOneCompany(2));
 		System.out.println("____ delete company ______");
