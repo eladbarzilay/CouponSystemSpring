@@ -12,7 +12,7 @@ import com.elad.CouponSystemV3Spring.utills.ArtUtills;
 
 import lombok.RequiredArgsConstructor;
 
-//@Component
+@Component
 @Order(3)
 @RequiredArgsConstructor
 public class CustomerServiceTesting implements CommandLineRunner {

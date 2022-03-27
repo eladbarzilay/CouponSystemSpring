@@ -14,7 +14,7 @@ import com.elad.CouponSystemV3Spring.utills.ArtUtills;
 import ch.qos.logback.core.net.SyslogOutputStream;
 import lombok.RequiredArgsConstructor;
 
-//@Component
+@Component
 @Order(1)
 @RequiredArgsConstructor
 public class AdminServiceTesting implements CommandLineRunner{
