@@ -15,8 +15,8 @@
 	<name>CouponSystemV3Spring</name>
 	<description>Demo project for Spring Boot</description>
 
-	<properties>
-		<java.version>1.8</java.version>
+<properties>
+		<java.version>11</java.version>
 	</properties>
   
   
@@ -34,6 +34,13 @@
 			    <artifactId>springfox-swagger-ui</artifactId>
 			    <version>2.9.2</version>
 			</dependency>
+			
+			<dependency>
+    <groupId>com.google.cloud.sql</groupId>
+    <artifactId>mysql-socket-factory-connector-j-8</artifactId>
+    <version>1.4.4</version>
+</dependency>
+			
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -50,10 +57,10 @@
 		
 		
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -76,29 +83,6 @@
 
 	<build>
 		<plugins>
-		
-		  <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
-                <executions>
-                    <execution>
-                        <id>zip-files</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                            
-                                <zip destfile="${basedir}/target/app.zip" basedir="${basedir}/target"
-                                     includes="Dockerfile, Dockerrun.aws.json, ${project.artifactId}.jar"/>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -112,6 +96,23 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+		<groupId>com.heroku.sdk</groupId>
+		<artifactId>heroku-maven-plugin</artifactId>
+		<version>2.0.3</version>
+		<configuration>
+			<appName>couponsystem</appName>
+			<includeTarget>false</includeTarget>
+			<includes>
+				<include>${project.build.directory}/${project.build.finalName}.jar</include>
+			</includes>
+			<jdkVersion>${java.version}</jdkVersion>
+			<processTypes>
+				<web>java $JAVA_OPTS -jar
+					${project.build.directory}/${project.build.finalName}.jar</web>
+			</processTypes>
+		</configuration>
+	</plugin>
 		</plugins>
 	</build>
 

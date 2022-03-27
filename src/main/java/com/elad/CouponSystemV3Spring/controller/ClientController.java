@@ -24,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 @RequestMapping("client")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public abstract class ClientController {
 
     private final TokenManager tokenManager;
