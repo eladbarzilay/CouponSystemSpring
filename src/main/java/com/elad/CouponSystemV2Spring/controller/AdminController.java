@@ -38,7 +38,11 @@ public class AdminController{
     private final TokenManager tokenManager;
     private final LoginManagerService loginManagerService;
 	
-
+    @GetMapping("/hello")
+    public String HelloWorld() {
+    	return "hello";
+    }
+    
 	
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody LoginDetails loginDetails) throws SecurityException, LoginException, NotValidExeption {

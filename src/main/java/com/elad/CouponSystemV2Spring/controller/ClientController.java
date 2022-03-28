@@ -33,10 +33,7 @@ public abstract class ClientController {
     private final LoginManagerService loginManagerService;
     private String token;
 
-    @GetMapping("/hello")
-    public String HelloWorld() {
-    	return "hello";
-    }
+
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody LoginDetails loginDetails) throws SecurityException, LoginException, NotValidExeption {
         token = loginManagerService.login(loginDetails.getEmail(), loginDetails.getPassword(), ClientType.ADMINISTRATOR);
