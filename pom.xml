@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.elad</groupId>
-	<artifactId>CouponSystemV3Spring</artifactId>
+	<artifactId>CouponSystemV2Spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CouponSystemV3Spring</name>
+	<name>CouponSystemV2Spring1</name>
 	<description>Demo project for Spring Boot</description>
 
 <properties>
@@ -72,7 +72,13 @@
 			</exclusions>
 		</dependency>
 
-
+<!--
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		-->
 	</dependencies>
 
 	<build>
