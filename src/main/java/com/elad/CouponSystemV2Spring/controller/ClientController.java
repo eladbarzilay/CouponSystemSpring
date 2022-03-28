@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import com.elad.CouponSystemV2Spring.security.TokenManager;
 import com.elad.CouponSystemV2Spring.service.LoginManagerService;
 
 import lombok.RequiredArgsConstructor;
+import sun.jvm.hotspot.HelloWorld;
 
 @Component
 @RequiredArgsConstructor
@@ -31,6 +33,10 @@ public abstract class ClientController {
     private final LoginManagerService loginManagerService;
     private String token;
 
+    @GetMapping("/hello")
+    public String HelloWorld() {
+    	return "hello";
+    }
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody LoginDetails loginDetails) throws SecurityException, LoginException, NotValidExeption {
         token = loginManagerService.login(loginDetails.getEmail(), loginDetails.getPassword(), ClientType.ADMINISTRATOR);
