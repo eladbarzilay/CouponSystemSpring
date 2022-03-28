@@ -46,10 +46,10 @@ public class AdminServiceTesting implements CommandLineRunner{
 		Customer cus4 = Customer.builder().firstName("sean").lastName("barzilay").email("seanbarzilay@gmail.com").password("seanbarzilay").coupons(Arrays.asList()).build();
 
 		System.out.println("_____ add company works _______");
-		adminService.addCompany(c1);
-		adminService.addCompany(c2);
-		adminService.addCompany(c3);
-		adminService.addCompany(c4);
+//		adminService.addCompany(c1);
+//		adminService.addCompany(c2);
+//		adminService.addCompany(c3);
+//		adminService.addCompany(c4);
 //		System.out.println("_____ add company dont work _______");
 //		try {
 //			adminService.addCompany(c1);
