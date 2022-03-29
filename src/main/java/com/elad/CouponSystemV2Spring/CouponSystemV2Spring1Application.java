@@ -10,8 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-//@EnableJpaRepositories("com.elad.CouponSystemV2Spring") // Add this
-//@EntityScan("com.elad.CouponSystemV2Spring") // Add this 
 public class CouponSystemV2Spring1Application {
 
 	public static void main(String[] args) {
